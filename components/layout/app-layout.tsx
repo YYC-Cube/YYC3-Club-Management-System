@@ -15,11 +15,8 @@ import {
   Settings,
   ShoppingCart,
   Warehouse,
-  ClipboardList,
   Menu,
   X,
-  ChevronDown,
-  ChevronRight,
   Bot,
   Bell,
 } from "lucide-react"
