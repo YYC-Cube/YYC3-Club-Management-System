@@ -1,7 +1,8 @@
 {
-  "name": "f-ktv-pos",
+  "name": "yyc3-club-ops",
   "version": "0.1.0",
   "private": true,
+  "description": "YYC³ Club Ops - POS & Operations Management System",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
