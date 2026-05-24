@@ -27,7 +27,7 @@ export default function AdminDashboard() {
     availableRooms: rooms.filter((r) => r.status === "available").length,
     occupiedRooms: rooms.filter((r) => r.status === "occupied").length,
     totalOrders: orders.length,
-    todayRevenue: orders.reduce((sum, order) => sum + (order.totalAmount || order.total || 0), 0),
+    todayRevenue: orders.reduce((sum: number, order: any) => sum + (order.totalAmount || order.total || 0), 0),
   }
 
   const statCards = [
