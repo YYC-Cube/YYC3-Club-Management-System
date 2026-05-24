@@ -1,11 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useRoomStore } from "@/lib/stores/useRoomStore"
-import { useOrderStore } from "@/lib/stores/useOrderStore"
-import RoomStatusDashboard from "@/components/room/room-status-dashboard"
-import RoomDetailModal from "@/components/room/room-detail-modal"
 import POSSystem from "@/components/pos/pos-system"
+import RoomDetailModal from "@/components/room/room-detail-modal"
+import RoomStatusDashboard from "@/components/room/room-status-dashboard"
+import { useOrderStore } from "@/lib/stores/useOrderStore"
+import { useRoomStore } from "@/lib/stores/useRoomStore"
+import { useEffect, useState } from "react"
 
 export default function RoomsPage() {
   const [selectedRoom, setSelectedRoom] = useState<any>(null)
@@ -13,7 +13,7 @@ export default function RoomsPage() {
   const [showPOS, setShowPOS] = useState(false)
   const [posRoomId, setPosRoomId] = useState<string | undefined>()
 
-  const { fetchRooms, updateRoomStatus, startRoom, checkoutRoom } = useRoomStore()
+  const { rooms, fetchRooms, updateRoomStatus, startRoom, checkoutRoom } = useRoomStore()
   const { fetchOrders } = useOrderStore()
 
   useEffect(() => {
@@ -72,8 +72,8 @@ export default function RoomsPage() {
 
   return (
     <div className="h-full">
-      <RoomStatusDashboard onRoomClick={handleRoomClick} />
-      <RoomDetailModal room={selectedRoom} isOpen={isModalOpen} onClose={handleCloseModal} onAction={handleRoomAction} />
+      <RoomStatusDashboard rooms={rooms} onRoomClick={handleRoomClick} />
+      <RoomDetailModal room={selectedRoom} isOpen={isModalOpen} onClose={handleCloseModal} onStart={handleRoomAction} onCheckout={handleRoomAction} />
     </div>
   )
 }
