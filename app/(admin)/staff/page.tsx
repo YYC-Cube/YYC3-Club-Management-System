@@ -1,9 +1,9 @@
 "use client"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import AddEmployeeForm from "@/components/employee/add-employee-form"
-import PermissionManagement from "@/components/employee/permission-management"
-import GroupManagement from "@/components/employee/group-management"
+import { AddEmployeeForm } from "@/components/employee/add-employee-form"
+import { PermissionManagement } from "@/components/employee/permission-management"
+import { GroupManagement } from "@/components/employee/group-management"
 
 export default function StaffPage() {
   return (
